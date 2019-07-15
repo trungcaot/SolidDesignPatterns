@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolidDesignPattern
+namespace FactoryMethod
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Solid & Design Patterns.");
+            Console.WriteLine("Welcome to Factory Method in the design patterns.");
         }
     }
 }
