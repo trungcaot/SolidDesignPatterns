@@ -11,6 +11,9 @@ namespace FactoryMethod
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Factory Method in the design patterns.");
+            //-------------------------------------------------------------------//
+            IBank bank = BankFactory.GetBank(BankType.Vietcombank);
+            Console.WriteLine(bank.GetBankName());
         }
     }
 }
