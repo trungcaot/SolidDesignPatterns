@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="additional_facade_patterns.png" />
     <Content Include="facade-pattern.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,6 +14,8 @@ namespace FacadePattern
             Console.WriteLine("Client need to buy a milk tea by cash and freeshipping.");
 
             ShopFacade.GetInstanceShopFacade().BuyMilkTeaByCashWithFreeShipping("trungct@gmail.com");
+
+            // You can practice with a attached image (additional_facade_patterns.png) in order to get more knowledge.
         }
     }
 }

@@ -22,5 +22,10 @@ namespace FacadePattern.Services
         {
             Console.WriteLine("Payment by cash.");
         }
+
+        public void PaymentByMomo()
+        {
+            Console.WriteLine("Payment by Momo E-wallet.");
+        }
     }
 }
