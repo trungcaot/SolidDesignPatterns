@@ -9,7 +9,7 @@ namespace SRP
     /// <summary>
     /// Reponsible for keeping track of work report entries.
     /// </summary>
-    public class WorkReport
+    public class WorkReport : IEntryManager<WorkReportEntry>
     {
         private readonly List<WorkReportEntry> _entries;
 

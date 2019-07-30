@@ -14,14 +14,14 @@ namespace SRP
         // moved.
         // we added a new feature saving to file or even more features in this class.
         // load or upload to cloud
-        public void SaveToFile(string directoryPath, string fileName, WorkReport report)
+        public void SaveToFile<T>(string directoryPath, string fileName, IEntryManager<T> workReport)
         {
             if (!Directory.Exists(directoryPath))
             {
                 Directory.CreateDirectory(directoryPath);
             }
 
-            File.WriteAllText(Path.Combine(directoryPath, fileName), report.ToString());
+            File.WriteAllText(Path.Combine(directoryPath, fileName), workReport.ToString());
         }
     }
 }
