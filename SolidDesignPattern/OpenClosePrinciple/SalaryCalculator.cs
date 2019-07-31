@@ -17,10 +17,31 @@ namespace OpenClosePrinciple
 
         public double CalculateTotalSalaries()
         {
+            // Item 1:
+            //double totalSalaries = 0D;
+            //foreach (var devReport in _developerReports)
+            //{
+            //    totalSalaries += devReport.HourlyRate * devReport.WorkingHours;
+            //}
+            //return totalSalaries;
+
+
+            // Item 2.
+            // ----------------
+            // Even though this solution is going to give us the correct result, this is not an
+            // optimal solution.
+            //-----------------
             double totalSalaries = 0D;
             foreach (var devReport in _developerReports)
             {
-                totalSalaries += devReport.HourlyRate * devReport.WorkingHours;
+                if (devReport.Level == "Senior developer")
+                {
+                    totalSalaries += devReport.HourlyRate * devReport.WorkingHours * 1.2;
+                }
+                else
+                {
+                    totalSalaries += devReport.HourlyRate * devReport.WorkingHours;
+                }
             }
             return totalSalaries;
         }
