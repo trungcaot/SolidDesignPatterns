@@ -8,9 +8,9 @@ namespace OpenClosePrinciple
 {
     public class SalaryCalculator
     {
-        private readonly IEnumerable<DeveloperReport> _developerReports;
+        private readonly IEnumerable<BaseSalaryCalculator> _developerReports;
 
-        public SalaryCalculator(List<DeveloperReport> developerReports)
+        public SalaryCalculator(List<BaseSalaryCalculator> developerReports)
         {
             _developerReports = developerReports;
         }
@@ -34,14 +34,7 @@ namespace OpenClosePrinciple
             double totalSalaries = 0D;
             foreach (var devReport in _developerReports)
             {
-                if (devReport.Level == "Senior developer")
-                {
-                    totalSalaries += devReport.HourlyRate * devReport.WorkingHours * 1.2;
-                }
-                else
-                {
-                    totalSalaries += devReport.HourlyRate * devReport.WorkingHours;
-                }
+                totalSalaries += devReport.CalculateSalary();
             }
             return totalSalaries;
         }
