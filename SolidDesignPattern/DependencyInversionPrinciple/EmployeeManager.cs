@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DependencyInversionPrinciple.Enums;
+using DependencyInversionPrinciple.RefactorCode;
 
 namespace DependencyInversionPrinciple
 {
-    public class EmployeeManager
+    public class EmployeeManager : IEmployeeSearchable
     {
         private readonly List<Employee> _employees;
 
@@ -20,6 +22,8 @@ namespace DependencyInversionPrinciple
             _employees.Add(employee);
         }
 
-        public List<Employee> Employees => _employees;
+        public IEnumerable<Employee> GetEmployeesByGenderAndPosition(Gender gender, Position position)
+            => _employees.Where(emp => emp.Gender == gender && emp.Position == position);
+
     }
 }

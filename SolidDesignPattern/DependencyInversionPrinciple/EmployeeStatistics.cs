@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DependencyInversionPrinciple.RefactorCode;
 
 namespace DependencyInversionPrinciple
 {
     public class EmployeeStatistics
     {
-        private readonly EmployeeManager _empManager;
+        private readonly IEmployeeSearchable _emp;
 
-        public EmployeeStatistics(EmployeeManager empManager)
+        public EmployeeStatistics(IEmployeeSearchable emp)
         {
-            _empManager = empManager;
+            _emp = emp;
         }
 
         public int CountFemaleManagers() =>
-            _empManager.Employees.Count(emp => emp.Gender == Gender.Female && emp.Position == Position.Manager);
+            _emp.GetEmployeesByGenderAndPosition(Gender.Female, Position.Manager).Count();
     }
 }
